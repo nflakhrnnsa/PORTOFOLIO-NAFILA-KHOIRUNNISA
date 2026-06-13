@@ -1,0 +1,2623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nafila Khoirunnisa | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+:root{
+--primary:#0F172A;
+--secondary:#1E293B;
+--gold:#C9A227;
+--light:#F8FAFC;
+--text:#475569;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:white;
+color:var(--text);
+overflow-x:hidden;
+}
+
+/* =====================
+NAVBAR
+===================== */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:80px;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(12px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 8%;
+z-index:9999;
+border-bottom:1px solid #eee;
+}
+
+.logo{
+font-size:24px;
+font-weight:800;
+color:var(--primary);
+letter-spacing:1px;
+}
+
+.nav-links{
+display:flex;
+gap:35px;
+}
+
+.nav-links a{
+text-decoration:none;
+font-weight:600;
+color:var(--secondary);
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:var(--gold);
+}
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+color:var(--primary);
+}
+/* =====================
+HERO
+===================== */
+
+.hero{
+min-height:100vh;
+padding:120px 8%;
+display:grid;
+grid-template-columns:420px 1fr;
+gap:80px;
+align-items:center;
+}
+
+.hero-photo{
+position:relative;
+width:380px;
+height:500px;
+}
+
+.blob{
+width:100%;
+height:100%;
+overflow:hidden;
+
+border-radius:
+55% 45% 40% 60% /
+60% 35% 65% 40%;
+
+box-shadow:
+0 25px 60px rgba(0,0,0,.15);
+}
+
+.blob img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero-photo::before{
+content:'';
+position:absolute;
+width:120px;
+height:120px;
+background:var(--gold);
+border-radius:50%;
+top:-20px;
+right:-20px;
+z-index:-1;
+opacity:.15;
+}
+
+.hero-photo::after{
+content:'';
+position:absolute;
+width:160px;
+height:160px;
+background:var(--primary);
+border-radius:50%;
+bottom:-30px;
+left:-30px;
+z-index:-1;
+opacity:.08;
+}
+
+.hero-content span{
+display:inline-block;
+padding:10px 20px;
+background:#F1F5F9;
+border-radius:50px;
+font-weight:600;
+margin-bottom:20px;
+}
+
+.hero-content h1{
+font-size:clamp(36px,5vw,64px);
+line-height:1.1;
+color:var(--primary);
+margin-bottom:15px;
+}
+
+.hero-content h2{
+font-size:24px;
+font-weight:600;
+margin-bottom:25px;
+color:var(--gold);
+}
+
+.hero-content p{
+font-size:18px;
+line-height:1.8;
+max-width:700px;
+margin-bottom:35px;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn-primary{
+padding:15px 28px;
+background:var(--primary);
+color:white;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+}
+
+.btn-secondary{
+padding:15px 28px;
+border:1px solid #dbe3ea;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+color:var(--primary);
+}
+
+/* =====================
+SECTION
+===================== */
+
+section{
+padding:10px 8%;
+}
+
+.section-title{
+font-size:clamp(30px,4vw,42px);
+font-weight:800;
+color:var(--primary);
+margin-bottom:20px;
+}
+
+.section-subtitle{
+font-size:18px;
+color:#64748B;
+margin-bottom:60px;
+}
+
+/* =====================
+ABOUT
+===================== */
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about-grid img{
+width:100%;
+border-radius:25px;
+height:450px;
+object-fit:cover;
+}
+
+.about-content p{
+font-size:18px;
+line-height:1.9;
+margin-bottom:25px;
+}
+
+.about-stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-top:30px;
+}
+
+.stat{
+padding:25px;
+background:#F8FAFC;
+border-radius:20px;
+text-align:center;
+}
+
+.stat h3{
+font-size:30px;
+color:var(--gold);
+margin-bottom:10px;
+}
+
+/* =====================
+RESPONSIVE
+===================== */
+
+@media(max-width:900px){
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero-photo{
+margin:auto;
+width:320px;
+height:420px;
+}
+
+.hero-content h1{
+font-size:45px;
+}
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.about-stats{
+grid-template-columns:1fr;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+.contact-card a{
+word-break:break-word;
+}
+/* =====================
+WORK EXPERIENCE
+===================== */
+
+.timeline{
+position:relative;
+max-width:1100px;
+margin:auto;
+}
+
+.timeline::before{
+content:'';
+position:absolute;
+left:50%;
+top:0;
+width:4px;
+height:100%;
+background:linear-gradient(
+to bottom,
+var(--gold),
+#e5e7eb
+);
+transform:translateX(-50%);
+}
+
+.timeline-item{
+position:relative;
+width:50%;
+padding:5px;
+margin-bottom:60px;
+}
+
+.timeline-item:nth-child(odd){
+left:0;
+}
+
+.timeline-item:nth-child(even){
+left:50%;
+}
+
+.timeline-dot{
+position:absolute;
+width:22px;
+height:22px;
+background:var(--gold);
+border-radius:50%;
+top:40px;
+right:-11px;
+z-index:10;
+}
+
+.timeline-item:nth-child(even) .timeline-dot{
+left:-11px;
+}
+
+.timeline-card{
+background:white;
+padding:30px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.timeline-year{
+color:var(--gold);
+font-weight:700;
+font-size:15px;
+margin-bottom:10px;
+}
+
+.timeline-card h3{
+color:var(--primary);
+margin-bottom:8px;
+}
+
+.timeline-role{
+font-weight:600;
+margin-bottom:20px;
+color:#64748B;
+}
+
+.timeline-gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-bottom:18px;
+}
+
+.timeline-gallery img{
+width:100%;
+height:auto;
+max-height:250px;
+object-fit:contain;
+border-radius:14px;
+background:#f8fafc;
+display:block;
+}
+.timeline-card{
+background:#fff;
+padding:25px;
+border-radius:22px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+overflow:hidden;
+}
+
+.timeline-card ul{
+padding-left:20px;
+line-height:1.8;
+}
+
+.timeline-card li{
+margin-bottom:8px;
+}
+
+.maps-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 20px;
+background:var(--primary);
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:600;
+}
+
+@media(max-width:900px){
+
+.timeline::before{
+left:20px;
+}
+
+.timeline-item{
+width:100%;
+left:0 !important;
+padding-left:60px;
+padding-right:0;
+}
+
+.timeline-dot{
+left:9px !important;
+}
+
+}
+/* =====================
+ORGANIZATION
+===================== */
+
+.org-timeline{
+position:relative;
+max-width:1000px;
+margin:auto;
+}
+
+.org-timeline::before{
+content:'';
+position:absolute;
+left:50%;
+top:0;
+height:100%;
+width:3px;
+background:#d6b14a;
+transform:translateX(-50%);
+}
+
+.org-item{
+position:relative;
+width:50%;
+padding:25px;
+margin-bottom:50px;
+}
+
+.org-item:nth-child(odd){
+left:0;
+}
+
+.org-item:nth-child(even){
+left:50%;
+}
+
+.org-dot{
+position:absolute;
+width:20px;
+height:20px;
+background:#d6b14a;
+border-radius:50%;
+top:35px;
+right:-10px;
+}
+
+.org-item:nth-child(even) .org-dot{
+left:-10px;
+}
+
+.org-card{
+background:#fff;
+padding:25px;
+border-radius:22px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.org-card h3{
+color:var(--primary);
+margin-bottom:8px;
+}
+
+.org-position{
+font-weight:600;
+color:#64748B;
+margin-bottom:15px;
+}
+
+.org-gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-bottom:18px;
+}
+
+.org-gallery img{
+width:100%;
+height:170px;
+object-fit:contain;
+border-radius:14px;
+background:#f8fafc;
+}
+
+.org-card ul{
+padding-left:18px;
+line-height:1.8;
+}
+
+@media(max-width:900px){
+
+.org-timeline::before{
+left:20px;
+}
+
+.org-item{
+width:100%;
+left:0 !important;
+padding-left:60px;
+padding-right:0;
+}
+
+.org-dot{
+left:10px !important;
+}
+
+}
+/* =====================
+PROJECTS
+===================== */
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.project-card{
+background:white;
+border-radius:28px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+transition:.35s;
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+box-shadow:0 25px 60px rgba(0,0,0,.12);
+}
+
+.project-card img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.project-content{
+padding:30px;
+}
+
+.project-year{
+color:var(--gold);
+font-weight:700;
+margin-bottom:10px;
+}
+
+.project-content h3{
+color:var(--primary);
+font-size:24px;
+margin-bottom:15px;
+}
+
+.project-content p{
+line-height:1.8;
+margin-bottom:20px;
+}
+
+.tech-stack{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:25px;
+}
+
+.tech-stack span{
+padding:8px 14px;
+background:#F1F5F9;
+border-radius:30px;
+font-size:14px;
+font-weight:600;
+}
+
+.project-btn{
+display:inline-block;
+padding:12px 22px;
+background:var(--primary);
+color:white;
+text-decoration:none;
+border-radius:12px;
+font-weight:600;
+}
+
+/* PROJECT FEATURE */
+
+.feature-project{
+margin-bottom:60px;
+background:#F8FAFC;
+border-radius:30px;
+padding:40px;
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.feature-project img{
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:22px;
+}
+
+.feature-info h3{
+font-size:34px;
+margin-bottom:15px;
+color:var(--primary);
+}
+
+.feature-info p{
+line-height:1.9;
+margin-bottom:20px;
+}
+
+@media(max-width:900px){
+
+.feature-project{
+grid-template-columns:1fr;
+}
+
+}
+/* =====================
+WEB APPLICATIONS
+===================== */
+
+.web-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.web-card{
+background:white;
+border-radius:28px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+transition:.35s;
+position:relative;
+}
+
+.web-card:hover{
+transform:translateY(-10px);
+box-shadow:0 25px 60px rgba(0,0,0,.15);
+}
+
+.web-preview{
+position:relative;
+overflow:hidden;
+}
+
+.web-preview img{
+width:100%;
+height:240px;
+object-fit:cover;
+transition:.5s;
+}
+
+.web-card:hover .web-preview img{
+transform:scale(1.08);
+}
+
+.web-overlay{
+position:absolute;
+inset:0;
+background:rgba(15,23,42,.85);
+display:flex;
+justify-content:center;
+align-items:center;
+opacity:0;
+transition:.4s;
+}
+
+.web-card:hover .web-overlay{
+opacity:1;
+}
+
+.web-overlay a{
+text-decoration:none;
+color:white;
+font-weight:700;
+padding:14px 24px;
+border:1px solid white;
+border-radius:12px;
+}
+
+.web-content{
+padding:25px;
+}
+
+.web-content h3{
+font-size:22px;
+margin-bottom:12px;
+color:var(--primary);
+}
+
+.web-content p{
+line-height:1.8;
+margin-bottom:20px;
+}
+
+.web-tags{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.web-tags span{
+background:#F1F5F9;
+padding:8px 14px;
+border-radius:30px;
+font-size:13px;
+font-weight:600;
+}
+/* =====================
+SKILLS
+===================== */
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.skill-card{
+background:white;
+border-radius:22px;
+padding:25px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.skill-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 50px rgba(0,0,0,.12);
+}
+
+.skill-card img{
+width:65px;
+height:65px;
+object-fit:contain;
+margin-bottom:15px;
+}
+
+.skill-card h4{
+color:var(--primary);
+margin-bottom:8px;
+}
+
+.skill-card p{
+font-size:14px;
+color:#64748B;
+}
+
+/* =====================
+CONTACT
+===================== */
+
+.contact-wrapper{
+background:var(--primary);
+border-radius:35px;
+padding:70px;
+color:white;
+text-align:center;
+}
+
+.contact-wrapper h2{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.contact-wrapper p{
+font-size:18px;
+opacity:.9;
+margin-bottom:40px;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.contact-card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:22px;
+transition:.3s;
+}
+
+.contact-card:hover{
+background:rgba(255,255,255,.15);
+transform:translateY(-5px);
+}
+
+.contact-card i{
+font-size:34px;
+margin-bottom:15px;
+color:var(--gold);
+}
+
+.contact-card h4{
+margin-bottom:10px;
+}
+
+.contact-card a{
+color:white;
+text-decoration:none;
+font-size:15px;
+word-break:break-word;
+}
+
+.footer{
+margin-top:60px;
+padding-top:25px;
+border-top:1px solid rgba(255,255,255,.15);
+font-size:14px;
+opacity:.8;
+text-align:center;
+}
+
+@media(max-width:768px){
+
+.contact-wrapper{
+padding:40px 25px;
+}
+
+}
+/* =====================
+ANIMATION
+===================== */
+
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:all .8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* NAVBAR SCROLL */
+
+.navbar.scrolled{
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+background:rgba(255,255,255,.98);
+}
+
+/* HERO ANIMATION */
+
+.hero-photo{
+animation:floatPhoto 5s ease-in-out infinite;
+}
+
+@keyframes floatPhoto{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+/* BUTTON EFFECT */
+
+.btn-primary,
+.btn-secondary,
+.project-btn,
+.maps-btn{
+transition:.3s;
+}
+
+.btn-primary:hover,
+.project-btn:hover,
+.maps-btn:hover{
+transform:translateY(-3px);
+}
+
+.btn-secondary:hover{
+background:#f8fafc;
+}
+
+/* CARD EFFECT */
+
+.timeline-card,
+.org-card,
+.project-card,
+.web-card,
+.skill-card{
+transition:.35s;
+}
+
+.timeline-card:hover,
+.org-card:hover{
+transform:translateY(-8px);
+}
+
+/* SECTION TITLE */
+
+.section-title{
+position:relative;
+display:inline-block;
+padding-bottom:12px;
+}
+
+.section-title::after{
+content:'';
+position:absolute;
+left:0;
+bottom:0;
+width:70px;
+height:4px;
+background:var(--gold);
+border-radius:20px;
+}
+.modal{
+display:none;
+position:fixed;
+z-index:9999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.8);
+}
+
+.modal-content{
+background:white;
+position:relative;
+width:70%;
+max-width:700px;
+max-height:80vh;
+overflow-y:auto;
+margin:40px auto;
+padding:25px;
+border-radius:20px;
+}
+
+.modal-gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.modal-gallery img,
+.modal-gallery video{
+width:100%;
+height:250px;
+object-fit:contain;
+border-radius:12px;
+background:#f5f5f5;
+}
+.close-modal{
+cursor:pointer;
+font-size:30px;
+font-weight:bold;
+position:absolute;
+top:15px;
+right:20px;
+z-index:10000;
+}
+/* =====================
+MOBILE RESPONSIVE
+===================== */
+
+@media (max-width:768px){
+
+/* SECTION */
+
+section{
+padding:70px 20px;
+}
+
+/* NAVBAR */
+
+.navbar{
+padding:0 20px;
+height:70px;
+}
+
+.logo{
+font-size:20px;
+}
+
+.nav-links{
+display:none;
+}
+
+/* HERO */
+
+.hero{
+padding:120px 20px 80px;
+grid-template-columns:1fr;
+gap:40px;
+text-align:center;
+}
+
+.hero-photo{
+width:260px;
+height:340px;
+margin:auto;
+}
+
+.hero-content h1{
+font-size:36px;
+}
+
+.hero-content h2{
+font-size:20px;
+}
+
+.hero-content p{
+font-size:16px;
+}
+
+/* ABOUT */
+
+.about-grid{
+grid-template-columns:1fr;
+gap:30px;
+}
+
+.about-grid img{
+height:300px;
+}
+
+.about-stats{
+grid-template-columns:1fr;
+}
+
+/* PROJECT */
+
+.project-grid{
+grid-template-columns:1fr;
+}
+
+.project-card img{
+height:220px;
+}
+
+.project-content{
+padding:20px;
+}
+
+/* WEB */
+
+.web-grid{
+grid-template-columns:1fr;
+}
+
+.web-preview img{
+height:220px;
+}
+
+/* SKILL */
+
+.skills-grid{
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.skill-card{
+padding:18px;
+}
+
+.skill-card img{
+width:50px;
+height:50px;
+}
+
+/* CONTACT */
+
+.contact-wrapper{
+padding:40px 20px;
+}
+
+.contact-wrapper h2{
+font-size:32px;
+}
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+/* MODAL */
+
+.modal-content{
+width:95%;
+max-width:none;
+padding:20px;
+margin:20px auto;
+}
+
+.modal-gallery{
+grid-template-columns:1fr;
+}
+
+.modal-gallery img,
+.modal-gallery video{
+height:220px;
+}
+
+}
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+position:fixed;
+top:70px;
+right:-100%;
+width:260px;
+height:100vh;
+background:white;
+flex-direction:column;
+padding:40px 25px;
+gap:25px;
+box-shadow:-10px 0 30px rgba(0,0,0,.08);
+transition:.35s;
+display:flex;
+}
+
+.nav-links.active{
+right:0;
+}
+
+}
+@media(max-width:768px){
+
+.timeline-gallery{
+grid-template-columns:1fr;
+}
+
+.timeline-gallery img{
+height:auto;
+max-height:350px;
+object-fit:contain;
+background:#f5f5f5;
+padding:5px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+PORTOFOLIO
+</div>
+
+<div class="menu-toggle">
+<i class="fas fa-bars"></i>
+</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#organization">Organization</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-photo">
+
+<div class="blob">
+
+<img src="pasfotofila.jpeg">
+alt="profile">
+
+</div>
+
+</div>
+
+<div class="hero-content">
+
+<span>
+Geomatics Engineer
+</span>
+
+<h1>
+Nafila Khoirunnisa
+</h1>
+
+<h2>
+GIS Analyst • Geospatial Web Developer
+</h2>
+
+<p>
+Fresh Graduate in Geomatics Engineering from
+UPN "Veteran" Yogyakarta with interests in
+GIS, Spatial Analysis, WebGIS Development,
+Disaster Management, Data Analytics,
+Digital Marketing and Business Development.
+</p>
+
+<div class="hero-buttons">
+
+<a href="https://www.linkedin.com/in/nafila-khoirunnisa-845315245/"
+target="_blank"
+class="btn-secondary">
+LinkedIn
+</a>
+
+<a href="https://github.com/nflakhrnnsa"
+target="_blank"
+class="btn-secondary">
+GitHub
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="reveal">
+
+<h2 class="section-title">
+About Me
+</h2>
+
+<p class="section-subtitle">
+Professional Profile
+</p>
+
+<div class="about-grid">
+
+<img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200">
+
+<div class="about-content">
+
+<p>
+Fresh Graduate in Geomatics Engineering and among
+the first graduates of the 2022 cohort, completing
+the degree in only 3.9 years.
+Experienced in GIS, geospatial web development,
+disaster data management, data analyst.
+</p>
+
+<p>
+During my studies, I actively engaged in organizational
+activities, geospatial projects, and academic administration
+as an Assistant to the Head of the Geomatics Engineering
+Study Program. Beyond my technical background, I am also
+the founder of Soto Kenangan, an F&B business in Piyungan,
+which has strengthened my skills in entrepreneurship,
+leadership, business operations, digital marketing,
+branding, customer relationship management, and strategic
+planning.
+</p>
+
+<div class="about-stats">
+
+<div class="stat">
+<h3>3.54</h3>
+<p>GPA</p>
+</div>
+
+<div class="stat">
+<h3>5+</h3>
+<p>Work Experience</p>
+</div>
+
+<div class="stat">
+<h3>4+</h3>
+<p>Organization Experience</p>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+<section id="experience" class="reveal">
+
+<h2 class="section-title">
+Work Experience
+</h2>
+
+<p class="section-subtitle">
+Professional Journey & Career Experiences
+</p>
+
+<div class="timeline">
+
+<!-- SOTO -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-year">
+May 2026 - Present
+</div>
+
+<h3>Soto Kenangan Piyungan</h3>
+
+<div class="timeline-role">
+Business Owner
+</div>
+
+<div class="timeline-gallery">
+
+<img src="soto1.jpeg">
+
+<img src="reviewsoto.jpeg">
+
+</div>
+
+<ul>
+<li>Developed a food & beverage business from concept planning to daily operations.</li>
+
+<li>Designed promotional materials including menus, posters and marketing content.</li>
+
+<li>Managed digital marketing and optimized Google Business Profile.</li>
+
+<li>Planned restaurant layout and customer experience.</li>
+
+<li>Oversaw scheduling, inventory and service quality.</li>
+</ul>
+
+<a href="https://maps.app.goo.gl/p5Z2sCQhXnbdq1iC6"
+target="_blank"
+class="maps-btn">
+📍 View Location
+</a>
+
+</div>
+
+</div>
+
+<!-- BPBD -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-year">
+Aug 2025 - Sep 2025
+</div>
+
+<h3>BPBD DIY</h3>
+
+<div class="timeline-role">
+Internship
+</div>
+
+<div class="timeline-gallery">
+
+<img src="kp1.jpeg">
+
+<img src="kp2.jpeg">
+
+</div>
+
+<ul>
+<li>Managed disaster data in Web PAMOR.</li>
+
+<li>Processed spatial data to produce flood hazard maps.</li>
+
+<li>Developed web applications using HTML, CSS and JavaScript.</li>
+
+<li>Integrated GIS data into web systems and deployed via GitHub Pages.</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- ASSISTANT -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-year">
+May 2023 - Oct 2025
+</div>
+
+<h3>Assistant to Head of Geomatics Engineering Study Program</h3>
+
+<div class="timeline-role">
+Academic Assistant
+</div>
+
+<div class="timeline-gallery">
+
+<img src="as1.jpeg">
+
+<img src="as2.jpeg">
+
+</div>
+
+<ul>
+<li>Supported academic administration using Microsoft Office.</li>
+
+<li>Assisted seminar preparation and faculty coordination.</li>
+
+<li>Supported assessment and teaching material preparation.</li>
+
+<li>Involved in accreditation preparation activities.</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- PIPELINE -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-year">
+Aug 2023 - Sep 2023
+</div>
+
+<h3>Pipeline Pertamina Project</h3>
+
+<div class="timeline-role">
+Drafter
+</div>
+
+<div class="timeline-gallery">
+
+<img src="pip2.jpeg">
+
+<img src="pip1.jpeg">
+
+</div>
+
+<ul>
+<li>Processed field survey data.</li>
+
+<li>Performed interpolation and route design.</li>
+
+<li>Prepared technical layouts using AutoCAD Civil 3D.</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- PTSL -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-year">
+Jun 2023 - Jul 2023
+</div>
+
+<h3>PTSL Project</h3>
+
+<div class="timeline-role">
+Drafter
+</div>
+
+<div class="timeline-gallery">
+
+<img src="ptsl1.jpeg">
+
+<img src="ptsl2.jpeg">
+
+</div>
+
+<ul>
+<li>Created Land Parcel Maps (PBT & PBT KLA).</li>
+
+<li>Processed and organized cadastral data.</li>
+
+<li>Worked using AutoCAD Map.</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- PLN -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-year">
+Dec 2022 - Jan 2023
+</div>
+
+<h3>PLN Electrical Network Mapping Project</h3>
+
+<div class="timeline-role">
+Drafter
+</div>
+
+<div class="timeline-gallery">
+
+<img src="pln1.jpeg">
+
+<img src="pln2.jpeg">
+
+</div>
+
+<ul>
+<li>Digitized and mapped electrical networks using QGIS.</li>
+
+<li>Organized spatial data into structured map layers.</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="organization" class="reveal">
+
+<h2 class="section-title">
+Organizational Experience
+</h2>
+
+<p class="section-subtitle">
+Leadership, Event Management & Academic Activities
+</p>
+
+<div class="org-timeline">
+
+<!-- NAVIGATION -->
+
+<div class="org-item">
+
+<div class="org-dot"></div>
+
+<div class="org-card">
+
+<h3>Navigation 2023 & 2024</h3>
+
+<div class="org-position">
+Head of Event Division
+</div>
+
+<div class="org-gallery">
+
+<img src="nav1.jpeg">
+
+<img src="nav2.jpeg">
+
+</div>
+
+<ul>
+<li>Led and coordinated the event division.</li>
+
+<li>Managed national seminars and competitions.</li>
+
+<li>Developed event concepts and schedules.</li>
+
+<li>Ensured smooth execution of activities.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- HMTG -->
+
+<div class="org-item">
+
+<div class="org-dot"></div>
+
+<div class="org-card">
+
+<h3>HMTG UPN Veteran Yogyakarta</h3>
+
+<div class="org-position">
+Research & Development Division Staff
+</div>
+
+<div class="org-gallery">
+
+<img src="hmtgm.jpeg">
+
+<img src="hmtgm2.jpeg">
+
+</div>
+
+<ul>
+
+<li>Managed Geomatics Info program.</li>
+
+<li>Distributed academic information.</li>
+
+<li>Promoted competition opportunities.</li>
+
+<li>Supported student participation growth.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- PKKBN -->
+
+<div class="org-item">
+
+<div class="org-dot"></div>
+
+<div class="org-card">
+
+<h3>PKKBN Teknik Geomatika 2023</h3>
+
+<div class="org-position">
+Secretary & Master of Ceremony
+</div>
+
+<div class="org-gallery">
+
+<img src="pkk1.jpeg">
+
+<img src="pkk2.jpeg">
+
+</div>
+
+<ul>
+
+<li>Managed event administration.</li>
+
+<li>Prepared event documentation.</li>
+
+<li>Served as Master of Ceremony.</li>
+
+<li>Supported orientation activities.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- SEMINAR -->
+
+<div class="org-item">
+
+<div class="org-dot"></div>
+
+<div class="org-card">
+
+<h3>Seminar Kewirausahaan 2023</h3>
+
+<div class="org-position">
+Head of Event Division
+</div>
+
+<div class="org-gallery">
+
+<img src="sem1.jpeg">
+
+<img src="sem2.jpeg">
+
+</div>
+
+<ul>
+
+<li>Coordinated event planning.</li>
+
+<li>Developed event schedules.</li>
+
+<li>Managed event flow.</li>
+
+<li>Ensured successful implementation.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="projects" class="reveal">
+
+<h2 class="section-title">
+Projects Portfolio
+</h2>
+
+<p class="section-subtitle">
+Selected Projects in GIS, Remote Sensing, Spatial Analysis & Artificial Intelligence
+</p>
+
+<!-- FEATURED PROJECT -->
+
+<div class="feature-project">
+
+<img src="webthe.jpeg">
+
+<div class="feature-info">
+
+<div class="project-year">
+2026 • Thesis Project
+</div>
+
+<h3>
+Flood Hazard Mapping in Depok District
+</h3>
+
+<p>
+Developed a comprehensive WebGIS platform for flood hazard mapping and visualization using Analytical Hierarchy Process (AHP). The platform provides interactive hazard maps, flood analysis, supporting datasets and public information services.
+</p>
+
+<div class="tech-stack">
+
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>Leaflet</span>
+<span>GIS</span>
+<span>AHP</span>
+
+</div>
+
+<a href="https://nflakhrnnsa.github.io/Website-Bahaya-Banjir-Kecamatan-Depok/"
+target="_blank"
+class="project-btn">
+
+View Project
+
+</a>
+
+</div>
+
+</div>
+
+<div class="project-grid">
+
+<!-- PROJECT 1 -->
+
+<div class="project-card">
+
+<img src="webint.jpeg">
+
+<div class="project-content">
+
+<div class="project-year">
+2025 • Intership Project
+</div>
+
+<h3>
+Flood Hazard DIY WebGIS
+</h3>
+
+<p>
+Developed a flood hazard WebGIS platform during internship at BPBD DIY for spatial data integration and hazard visualization.
+</p>
+
+<div class="tech-stack">
+
+<span>GIS</span>
+<span>Leaflet</span>
+<span>GeoJSON</span>
+<span>JavaScript</span>
+
+</div>
+
+<a href="https://nflakhrnnsa.github.io/FLOODDIYMAP/"
+target="_blank"
+class="project-btn">
+
+Visit Website
+
+</a>
+
+</div>
+
+</div>
+
+<!-- PROJECT 2 -->
+
+<div class="project-card">
+
+<img src="gee.jpeg">
+
+<div class="project-content">
+
+<div class="project-year">
+2024
+</div>
+
+<h3>
+Integrating SDGs into Change Detection and Mangrove  Monitoring 
+</h3>
+
+<p>
+Land cover classification and deforestation rate estimation using satellite imagery and Google Earth Engine.
+</p>
+
+<div class="tech-stack">
+
+<span>Google Earth Engine</span>
+<span>Remote Sensing</span>
+<span>Classification</span>
+
+</div>
+
+<button
+class="project-btn"
+onclick="openProject('gee')">
+
+View Details
+
+</button>
+
+</div>
+
+</div>
+
+<!-- PROJECT 3 -->
+
+<div class="project-card">
+
+<img src="yolo.jpeg">
+
+<div class="project-content">
+
+<div class="project-year">
+2023
+</div>
+
+<h3>
+YOLO Object Detection
+</h3>
+
+<p>
+Implemented deep learning object detection model using YOLO architecture and image datasets.
+</p>
+
+<div class="tech-stack">
+
+<span>YOLO</span>
+<span>Python</span>
+<span>Computer Vision</span>
+
+</div>
+
+<button
+class="project-btn"
+onclick="openProject('yolo')">
+
+View Details
+
+</button>
+
+</div>
+
+</div>
+
+<!-- PROJECT 4 -->
+
+<div class="project-card">
+
+<img src="3d.jpeg">
+
+<div class="project-content">
+
+<div class="project-year">
+2025
+</div>
+
+<h3>
+Flood Risk 3D Visualization
+</h3>
+
+<p>
+Created a 3D visualization of flood risks using GIS and spatial analysis techniques.
+</p>
+
+<div class="tech-stack">
+
+<span>GIS</span>
+<span>3D Animation</span>
+<span>ArcGIS</span>
+
+</div>
+
+<button
+class="project-btn"
+onclick="openProject('3d')">
+
+View Details
+
+</button>
+
+</div>
+
+</div>
+<!-- PROJECT 5 -->
+
+<div class="project-card">
+
+<img src="des1.jpeg">
+
+<div class="project-content">
+
+<div class="project-year">
+
+</div>
+
+<h3>
+Design a House with Sketch Up 
+</h3>
+
+<p>
+Designed a residential building using Sketch Up, focusing on architectural visualization and layout planning.
+</p>
+
+<div class="tech-stack">
+
+<span>Sketch Up</span>
+<span>Design</span>
+
+</div>
+
+<button
+class="project-btn"
+onclick="openProject('house')">
+
+View Details
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="web-apps" class="reveal">
+
+<h2 class="section-title">
+Web Applications
+</h2>
+
+<p class="section-subtitle">
+Interactive websites and WebGIS applications developed from academic and personal projects.
+</p>
+
+<div class="web-grid">
+
+<!-- WEB 2 -->
+
+<div class="web-card">
+
+<div class="web-preview">
+
+<img src="webgeo.jpeg">
+
+<div class="web-overlay">
+
+<a href="https://nflakhrnnsa.github.io/Tugas-SIGNET/"
+target="_blank">
+
+Open Website
+
+</a>
+
+</div>
+
+</div>
+
+<div class="web-content">
+
+<h3>
+Geomatics Engineering Application
+</h3>
+
+<p>
+Web application developed for Geomatics Engineering course assignments, showcasing what Geomatic it is.
+</p>
+
+<div class="web-tags">
+
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WEB 3 -->
+
+<div class="web-card">
+
+<div class="web-preview">
+
+<img src="osrm.jpeg">
+
+<div class="web-overlay">
+
+<a href="https://nflakhrnnsa.github.io/KuliahTamuOSRM/"
+target="_blank">
+
+Open Website
+
+</a>
+
+</div>
+
+</div>
+
+<div class="web-content">
+
+<h3>
+OSRM Routing Application
+</h3>
+
+<p>
+Interactive routing web application developed for guest lecture activities using Open Source Routing Machine.
+</p>
+
+<div class="web-tags">
+
+<span>OSRM</span>
+<span>Routing</span>
+<span>GIS</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WEB 4 -->
+
+<div class="web-card">
+
+<div class="web-preview">
+
+<img src="task.jpeg">
+
+<div class="web-overlay">
+
+<a href="https://nflakhrnnsa.github.io/CodingCamp-19Jan26-Nafila-Khoirunnisa/"
+target="_blank">
+
+Open Website
+
+</a>
+
+</div>
+
+</div>
+
+<div class="web-content">
+
+<h3>
+Task Planner
+</h3>
+
+<p>
+Website for managing tasks and projects.
+</p>
+
+<div class="web-tags">
+
+<span>Planner</span>
+<span>Frontend</span>
+<span>JavaScript</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="skills" class="reveal">
+
+<h2 class="section-title">
+Software & Technical Skills
+</h2>
+
+<p class="section-subtitle">
+Tools and technologies used in GIS, Remote Sensing, Surveying and Web Development.
+</p>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<img src="ArcGISlogo.png">
+<h4>ArcGIS</h4>
+<p>Spatial Analysis</p>
+</div>
+
+<div class="skill-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Qgis-icon-3.0.png">
+<h4>QGIS</h4>
+<p>Mapping & GIS</p>
+</div>
+
+<div class="skill-card">
+<img src="logogee.png">
+<h4>Google Earth Engine</h4>
+<p>Remote Sensing</p>
+</div>
+
+<div class="skill-card">
+<img src="tbc.jpg">
+<h4>Trimble Business Center</h4>
+<p>GNSS</p>
+</div>
+
+<div class="skill-card">
+<img src="geos.jpg">
+<h4>Geovia Surpac</h4>
+<p>Mine Planning and Modeling</p>
+</div>
+
+<div class="skill-card">
+<img src="acad.png">
+<h4>AutoCAD</h4>
+<p>Drafting</p>
+</div>
+
+<div class="skill-card">
+<img src="skp.png">
+<h4>Sketch Up</h4>
+<p>Desaign</p>
+</div>
+
+<div class="skill-card">
+<img src="frontend.png">
+<h4>HTML/CSS/JS</h4>
+<p>Web Development</p>
+</div>
+
+<div class="skill-card">
+<img src="vscode.png">
+<h4>HTML/CSS/JS</h4>
+<p>Code Editing</p>
+</div>
+
+<div class="skill-card">
+<img src="word.png">
+<h4>Microsoft Word</h4>
+<p>Document Creation</p>
+</div>
+
+<div class="skill-card">
+<img src="excel.png">
+<h4>Microsoft Excel</h4>
+<p>Data Analysis</p>
+</div>
+
+<div class="skill-card">
+<img src="canva.jpg">
+<h4>Canva</h4>
+<p>Visual Design</p>
+</div>
+
+</div>
+
+</section>
+<section id="contact" class="reveal">
+
+<div class="contact-wrapper">
+
+<h2>
+Let's Work Together
+</h2>
+
+<p>
+Interested in GIS, WebGIS, Spatial Analysis, Mapping Projects, or Collaboration Opportunities?
+</p>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<i class="fas fa-envelope"></i>
+
+<h4>Email</h4>
+
+<a href="mailto:khoirunnisanafila@gmail.com">
+khoirunnisanafila@gmail.com
+</a>
+
+</div>
+
+<div class="contact-card">
+
+<i class="fab fa-linkedin"></i>
+
+<h4>LinkedIn</h4>
+
+<a href="https://www.linkedin.com/in/nafila-khoirunnisa-845315245/"
+target="_blank">
+
+View Profile
+
+</a>
+
+</div>
+
+<div class="contact-card">
+
+<i class="fab fa-github"></i>
+
+<h4>GitHub</h4>
+
+<a href="https://github.com/nflakhrnnsa"
+target="_blank">
+
+nflakhrnnsa
+
+</a>
+
+</div>
+
+<div class="contact-card">
+
+<i class="fas fa-phone"></i>
+
+<h4>Phone</h4>
+
+<a href="tel:+6287880450885">
+
+087880450885
+
+</a>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+© 2026 Nafila Khoirunnisa • Portfolio Website
+
+</div>
+
+</div>
+
+</section>
+<div id="projectModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close-modal"
+onclick="closeProject()">
+
+&times;
+
+</span>
+
+<h2 id="modalTitle"></h2>
+
+<div id="modalGallery"
+class="modal-gallery">
+</div>
+
+<p id="modalDesc"></p>
+
+</div>
+
+</div>
+<script>
+
+/* =====================
+REVEAL ON SCROLL
+===================== */
+
+function reveal(){
+
+const reveals =
+document.querySelectorAll('.reveal');
+
+reveals.forEach(item=>{
+
+const windowHeight =
+window.innerHeight;
+
+const revealTop =
+item.getBoundingClientRect().top;
+
+const revealPoint = 120;
+
+if(revealTop < windowHeight - revealPoint){
+
+item.classList.add('active');
+
+}
+
+});
+
+}
+
+window.addEventListener(
+'scroll',
+reveal
+);
+
+reveal();
+
+/* =====================
+NAVBAR EFFECT
+===================== */
+
+window.addEventListener('scroll',()=>{
+
+const navbar =
+document.querySelector('.navbar');
+
+if(window.scrollY > 50){
+
+navbar.classList.add('scrolled');
+
+}else{
+
+navbar.classList.remove('scrolled');
+
+}
+
+});
+
+/* =====================
+ACTIVE MENU
+===================== */
+
+const sections =
+document.querySelectorAll('section');
+
+const navLinks =
+document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll',()=>{
+
+let current = '';
+
+sections.forEach(section=>{
+
+const sectionTop =
+section.offsetTop;
+
+if(
+pageYOffset >=
+sectionTop - 150
+){
+
+current =
+section.getAttribute('id');
+
+}
+
+});
+
+navLinks.forEach(link=>{
+
+link.classList.remove('active');
+
+if(
+link.getAttribute('href')
+=== '#' + current
+){
+
+link.classList.add('active');
+
+}
+
+});
+
+});
+
+/* =====================
+SMOOTH SCROLL
+===================== */
+
+document
+.querySelectorAll('a[href^="#"]')
+.forEach(anchor=>{
+
+anchor.addEventListener(
+'click',
+function(e){
+
+e.preventDefault();
+
+document
+.querySelector(
+this.getAttribute('href')
+)
+.scrollIntoView({
+
+behavior:'smooth'
+
+});
+
+});
+
+});
+
+/* =====================
+YEAR
+===================== */
+
+const year =
+new Date().getFullYear();
+
+const footer =
+document.querySelector('.footer');
+
+if(footer){
+
+footer.innerHTML =
+`© ${year} Nafila Khoirunnisa • Portfolio Website`;
+
+}
+/* =====================
+PROJECT MODAL
+===================== */
+
+const projectData = {
+
+gee:{
+title:"Integrating SDGs into Change Detection and Mangrove Monitoring",
+
+desc:"Mangrove monitoring and land cover classification using Google Earth Engine.",
+
+images:[
+"gee.jpeg"
+]
+},
+
+yolo:{
+title:"YOLO Object Detection",
+
+desc:"Implementation of object detection using the YOLO architecture for identifying and classifying objects in image and video datasets.",
+
+video:"kel 13 yolo.mp4"
+},
+
+"3d":{
+title:"Flood Risk 3D Visualization",
+
+desc:"3D flood visualization for hazard communication and spatial analysis.",
+
+video:"animasi3d.mp4"
+},
+
+house:{
+title:"Design a House with SketchUp",
+
+desc:"Residential house design and visualization project using SketchUp.",
+
+images:[
+"des1.jpeg",
+"wc.jpeg",
+"full.jpeg",
+"pyg1.jpeg",
+"pyg2.jpeg"
+
+]
+}
+
+};
+
+function openProject(id){
+
+const project = projectData[id];
+
+document.getElementById("modalTitle").innerText =
+project.title;
+
+document.getElementById("modalDesc").innerText =
+project.desc;
+
+let gallery = "";
+
+/* VIDEO */
+
+if(project.video){
+
+gallery = `
+<video controls width="100%">
+<source src="${project.video}" type="video/mp4">
+Browser Anda tidak mendukung video.
+</video>
+`;
+
+}
+
+/* GAMBAR */
+
+else if(project.images){
+
+project.images.forEach(img=>{
+
+gallery += `
+<img src="${img}">
+`;
+
+});
+
+}
+
+document.getElementById("modalGallery")
+.innerHTML = gallery;
+
+document.getElementById("projectModal")
+.style.display = "block";
+
+}
+function closeProject(){
+
+document.getElementById("projectModal")
+.style.display = "none";
+
+}
+const menuToggle =
+document.querySelector(".menu-toggle");
+
+const navMenu =
+document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click",()=>{
+
+navMenu.classList.toggle("active");
+
+});
+</script>
+</body>
+</html>
+
