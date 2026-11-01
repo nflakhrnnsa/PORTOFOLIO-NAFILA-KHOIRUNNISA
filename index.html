@@ -1323,6 +1323,45 @@ padding:5px;
 }
 
 }
+/* PDF MODAL */
+.pdf-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.pdf-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    height: 90vh;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.pdf-modal iframe {
+    border: none;
+}
+
+.pdf-close {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    z-index: 10;
+    font-size: 30px;
+    border: none;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+}
 </style>
 </head>
 
@@ -2265,12 +2304,9 @@ View Details
         </div>
 
         <!-- TOMBOL PDF -->
-        <a href="Tree Counting.pdf"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="project-btn">
-            View Project Report ↗
-        </a>
+        <button class="project-btn" onclick="openPdfModal()">
+    View Project Report ↗
+</button>
 
     </div>
 </div>
@@ -2278,6 +2314,20 @@ View Details
 </div>
 
 </section>
+<!-- PDF MODAL -->
+<div id="pdfModal" class="pdf-modal">
+    <div class="pdf-modal-content">
+        <button class="pdf-close" onclick="closePdfModal()">
+            &times;
+        </button>
+
+        <iframe
+            src="Tree Counting.pdf#toolbar=0&navpanes=0"
+            width="100%"
+            height="100%">
+        </iframe>
+    </div>
+</div>
 
 <section id="web-apps" class="reveal">
 
@@ -2950,6 +3000,22 @@ menuToggle.addEventListener("click",()=>{
 
 navMenu.classList.toggle("active");
 
+});
+// PDF MODAL
+function openPdfModal() {
+    document.getElementById("pdfModal").style.display = "flex";
+}
+
+function closePdfModal() {
+    document.getElementById("pdfModal").style.display = "none";
+}
+
+window.addEventListener("click", function(event) {
+    const modal = document.getElementById("pdfModal");
+
+    if (event.target === modal) {
+        closePdfModal();
+    }
 });
 </script>
 </body>
